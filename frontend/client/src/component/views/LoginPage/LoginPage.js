@@ -1,6 +1,6 @@
 import React from 'react'
 import { Row, Col } from 'antd'
-import { KAKAO_AUTH_URL } from '../../key'
+import { KAKAO_AUTH_URL } from '../../../../../server/config/key'
 import Logo from './img/Logo.png'
 import kakaoLoginButton from './img/kakaoLoginButton.png'
 

@@ -3,7 +3,8 @@ import { Route, Switch } from 'react-router-dom'
 
 import Hoppy from './views/MainPage/hoppy'
 import LoginPage from './views/LoginPage/LoginPage';
-import AuthRedirectHandler from './AuthRedirectHandler';
+import AuthRedirectHandler from '../AuthRedirectHandler';
+
 
 function App() {
     return (
