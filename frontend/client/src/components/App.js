@@ -3,22 +3,37 @@ import { Route, Switch } from "react-router-dom";
 import Auth from "../hoc/auth";
 // pages for this product
 import LandingPage from "./views/LandingPage/LandingPage.js";
-// import LoginPage from "./views/LoginPage/LoginPage.js";
-import RegisterPage from "./views/RegisterPage/RegisterPage.js";
+
 import NavBar from "./views/NavBar/NavBar";
 import Footer from "./views/Footer/Footer"
+
+// import LoginPage from "./views/LoginPage/LoginPage.js";
+import RegisterPage from "./views/RegisterPage/RegisterPage.js";
 import AuthRedirectHandler from './views/LoginPage/KakaoLogin/AuthRedirectHandler';
 import KakaoLoginPage from './views/LoginPage/KakaoLogin/KakaoLoginPage';
+
 import MyPage from './views/MyPage/MyPage';
+import MyMeeting from './views/MyPage/MyMeeting/MyMeeting';
+import LikeMeetingList from './views/MyPage/LikeMeetingList/LikeMeetingList';
+
 import ExitPage from './views/ExitPage/ExitPage';
+
 import ArtMeetingPage from './views/ArtMeetingPage/ArtMeetingPage'
 import DailyMeetingPage from './views/DailyMeetingPage/DailyMeetingPage'
 import ExerciseMeetingPage from './views/ExerciseMeetingPage/ExerciseMeetingPage'
 import FoodMeetingPage from './views/FoodMeetingPage/FoodMeetingPage'
-import HobbyStoryPage from './views/HobbyStoryPage/HobbyStoryPage'
-import MakeMeetingPage from './views/MakeMeetingPage/MakeMeetingPage'
 import MusicMeetingPage from './views/MusicMeetingPage/MusicMeetingPage'
 import TripMeetingPage from './views/TripMeetingPage/TripMeetingPage'
+
+import HobbyStoryPage from './views/HobbyStoryPage/HobbyStoryPage'
+import MakeMeetingPage from './views/MakeMeetingPage/MakeMeetingPage'
+
+import UploadExercise from './views/MakeMeetingPage/UploadMeetingPage/UploadExercise'
+import UploadArt from './views/MakeMeetingPage/UploadMeetingPage/UploadArt';
+import UploadDaily from './views/MakeMeetingPage/UploadMeetingPage/UploadDaily';
+import UploadFood from './views/MakeMeetingPage/UploadMeetingPage/UploadFood';
+import UploadMusic from './views/MakeMeetingPage/UploadMeetingPage/UploadMusic';
+import UploadTrip from './views/MakeMeetingPage/UploadMeetingPage/UploadTrip';
 
 
 //null   Anyone Can go inside
@@ -37,8 +52,12 @@ function App() {
           <Route exact path="/oauth/login/kakao" component={Auth(AuthRedirectHandler, false)} />
           <Route exact path="/register" component={Auth(RegisterPage, false)} />
 
+          {/* 마이페이지 */}
           {/* 나중에 null->true로 변경 + userId가 주소값에 할당되게 */}
           <Route exact path="/mypage" component={Auth(MyPage, null)} />
+          <Route exact path="/mypage/mymeeting" component={Auth(MyMeeting, null)} />
+          <Route exact path="/mypage/likemeeting" component={Auth(LikeMeetingList, null)} />
+
           <Route exact path="/exit" component={Auth(ExitPage, null)} />
 
           {/* 취미 커뮤니티 */}
@@ -49,9 +68,17 @@ function App() {
           <Route exact path="/musicMeeting" component={Auth(MusicMeetingPage, null)} />
           <Route exact path="/tripMeeting" component={Auth(TripMeetingPage, null)} />
 
-          {/* 모임 초대 및 스토리 */}
-          <Route exact path="/hobbyStory" component={Auth(HobbyStoryPage, null)} />
+          {/* 모임 초대*/}
           <Route exact path="/makeMeeting" component={Auth(MakeMeetingPage, null)} />
+          <Route exact path="/makeMeeting/exercise" component={Auth(UploadExercise, null)} />
+          <Route exact path="/makeMeeting/art" component={Auth(UploadArt, null)} />
+          <Route exact path="/makeMeeting/daily" component={Auth(UploadDaily, null)} />
+          <Route exact path="/makeMeeting/food" component={Auth(UploadFood, null)} />
+          <Route exact path="/makeMeeting/music" component={Auth(UploadMusic, null)} />
+          <Route exact path="/makeMeeting/trip" component={Auth(UploadTrip, null)} />
+
+          {/* 스토리 */}
+          <Route exact path="/hobbyStory" component={Auth(HobbyStoryPage, null)} />
         </Switch>
       </div>
       <Footer />
