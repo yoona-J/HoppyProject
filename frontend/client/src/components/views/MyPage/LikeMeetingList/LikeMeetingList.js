@@ -17,7 +17,7 @@ function LikeMeetingList() {
                         textAlign: 'left',
                         marginLeft: '27px',
                         fontSize: '16px'
-                    }}>마이페이지</p>
+                    }}>관심 모임 리스트</p>
             </div>
         </div>
   )

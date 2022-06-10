@@ -17,7 +17,7 @@ function MyMeeting() {
                         textAlign: 'left',
                         marginLeft: '27px',
                         fontSize: '16px'
-                    }}>마이페이지</p>
+                    }}>나의 모임</p>
             </div>
         </div>
   )
