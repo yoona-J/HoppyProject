@@ -15,6 +15,7 @@ import KakaoLoginPage from './views/LoginPage/KakaoLogin/KakaoLoginPage';
 import MyPage from './views/MyPage/MyPage';
 import MyMeeting from './views/MyPage/MyMeeting/MyMeeting';
 import LikeMeetingList from './views/MyPage/LikeMeetingList/LikeMeetingList';
+import MyStoryList from './views/MyPage/MyStoryList/MyStoryList';
 
 import ExitPage from './views/ExitPage/ExitPage';
 
@@ -57,6 +58,7 @@ function App() {
           <Route exact path="/mypage" component={Auth(MyPage, null)} />
           <Route exact path="/mypage/mymeeting" component={Auth(MyMeeting, null)} />
           <Route exact path="/mypage/likemeeting" component={Auth(LikeMeetingList, null)} />
+          <Route exact path="/mypage/mystory" component={Auth(MyStoryList, null)} />
 
           <Route exact path="/exit" component={Auth(ExitPage, null)} />
 
