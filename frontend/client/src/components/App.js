@@ -5,7 +5,8 @@ import Auth from "../hoc/auth";
 import LandingPage from "./views/LandingPage/LandingPage.js";
 
 import NavBar from "./views/NavBar/NavBar";
-import Footer from "./views/Footer/Footer"
+import Footer from "./views/Footer/Footer";
+import NotificationPage from './views/NotificationPage/NotificationPage';
 
 // import LoginPage from "./views/LoginPage/LoginPage.js";
 import RegisterPage from "./views/RegisterPage/RegisterPage.js";
@@ -52,6 +53,8 @@ function App() {
           <Route exact path="/login" component={Auth(KakaoLoginPage, false)} />
           <Route exact path="/oauth/login/kakao" component={Auth(AuthRedirectHandler, false)} />
           <Route exact path="/register" component={Auth(RegisterPage, false)} />
+
+          <Route exact path="/notification" component={Auth(NotificationPage, null)} />
 
           {/* 마이페이지 */}
           {/* 나중에 null->true로 변경 + userId가 주소값에 할당되게 */}
