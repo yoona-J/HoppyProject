@@ -14,11 +14,7 @@ import AuthRedirectHandler from './views/LoginPage/KakaoLogin/AuthRedirectHandle
 import KakaoLoginPage from './views/LoginPage/KakaoLogin/KakaoLoginPage';
 
 import MyPage from './views/MyPage/MyPage';
-import MyMeeting from './views/MyPage/MyMeeting/MyMeeting';
-import LikeMeetingList from './views/MyPage/LikeMeetingList/LikeMeetingList';
 import MyStoryList from './views/MyPage/MyStoryList/MyStoryList';
-
-import ExitPage from './views/ExitPage/ExitPage';
 
 import ArtMeetingPage from './views/ArtMeetingPage/ArtMeetingPage'
 import DailyMeetingPage from './views/DailyMeetingPage/DailyMeetingPage'
@@ -59,11 +55,7 @@ function App() {
           {/* 마이페이지 */}
           {/* 나중에 null->true로 변경 + userId가 주소값에 할당되게 */}
           <Route exact path="/mypage" component={Auth(MyPage, null)} />
-          <Route exact path="/mypage/mymeeting" component={Auth(MyMeeting, null)} />
-          <Route exact path="/mypage/likemeeting" component={Auth(LikeMeetingList, null)} />
           <Route exact path="/mypage/mystory" component={Auth(MyStoryList, null)} />
-
-          <Route exact path="/exit" component={Auth(ExitPage, null)} />
 
           {/* 취미 커뮤니티 */}
           <Route exact path="/artMeeting" component={Auth(ArtMeetingPage, null)} />
