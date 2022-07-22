@@ -10,11 +10,11 @@ function AuthRedirectHandler(props) {
     // console.log(logKey)
     const splitLogKey = logKey.split('=')
     // console.log(splitLogKey[1])
-    let jwtToken = splitLogKey[1].slice(0, -6)
-    console.log(jwtToken)
+    let certificationCode = splitLogKey[1].slice(0, -6)
+    console.log(certificationCode)
 
     const loginSuccess = () => {
-      if (jwtToken === undefined) {
+      if (certificationCode === undefined) {
           console.log('로그인에 실패했습니다.')
           delete Axios.defaults.headers.common['Authorization'];
           return <React.Fragment>
@@ -22,15 +22,27 @@ function AuthRedirectHandler(props) {
             </React.Fragment>
       } else {
           console.log('로그인에 성공하였습니다.')
-          Axios.defaults.headers.common['Authorization'] = `Bearer ${jwtToken}`;
+          const jwtToken = "najdadaskdjapdwanalkcasljdaidwiCBAUAYabcaoCAYOAWKDQKsGOG"
+          
+          fetch('/login/oauth2/code/kakao')
+            .then(response => {
+              console.log('res', response)
+              if(response.status === 200) {
+                localStorage.setItem('Authorization', `Bearer ${jwtToken}`);
+              }
+            })
+          
+          // Axios.defaults.headers.common['Authorization'] = `Bearer ${jwtToken}`;
+
+            props.history.push('/')
           return <React.Fragment>
-            <p>로그인 성공! {jwtToken}</p>
+            <p>로그인 성공! {certificationCode} // {jwtToken}</p>
             </React.Fragment>
       }
     }
 
   return (
-    <div>
+    <div style={{width: "100%"}}>
       {loginSuccess()}
     </div>
   )

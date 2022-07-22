@@ -1,5 +1,7 @@
-import React, {useState} from 'react';
-import {Menu, Modal, Button} from 'antd';
+import React, { useState } from 'react';
+import { Menu, Modal, Button } from 'antd';
+import Axios from 'axios';
+import API_SERVER from '../../../Config'
 
 function LeftMenu(props) {
 
@@ -10,13 +12,24 @@ function LeftMenu(props) {
     };
 
     const handleOk = () => {
-        console.log('ok')
         setIsModal(false);
+        // console.log('ok')
+        Axios
+          .get('/api/delete')
+          .then(response => {
+          if (response.status === 200) {
+            alert('탈퇴 처리 되었습니다.')
+            props
+              .push('/')
+          } else {
+            alert('탈퇴 처리가 되지 않았습니다. 다시 시도해주세요.')
+          }
+        })
     };
 
     const handleCancel = () => {
-        console.log('no')
-        setIsModal(false);
+        // console.log('no')
+        setIsModal(true);
     };
 
     return (
