@@ -22,21 +22,21 @@ function AuthRedirectHandler(props) {
             </React.Fragment>
       } else {
           console.log('로그인에 성공하였습니다.')
-          const jwtToken = "najdadaskdjapdwanalkcasljdaidwiCBAUAYabcaoCAYOAWKDQKsGOG"
+          // const jwtToken = "najdadaskdjapdwanalkcasljdaidwiCBAUAYabcaoCAYOAWKDQKsGOG"
           
-          fetch('/login/oauth2/code/kakao')
-            .then(response => {
-              console.log('res', response)
-              if(response.status === 200) {
-                localStorage.setItem('Authorization', `Bearer ${jwtToken}`);
-              }
-            })
+          // fetch('/login/oauth2/code/kakao')
+          //   .then(response => {
+          //     console.log('res', response)
+          //     if(response.status === 200) {
+          //       localStorage.setItem('Authorization', `Bearer ${jwtToken}`);
+          //     }
+          //   })
           
           // Axios.defaults.headers.common['Authorization'] = `Bearer ${jwtToken}`;
 
             props.history.push('/')
           return <React.Fragment>
-            <p>로그인 성공! {certificationCode} // {jwtToken}</p>
+            <p>로그인 성공! {certificationCode}</p>
             </React.Fragment>
       }
     }

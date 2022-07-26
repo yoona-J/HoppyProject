@@ -1,4 +1,5 @@
 import {Avatar, Button, Icon, Tabs} from 'antd'
+import Axios from 'axios';
 import React from 'react'
 import './MyPage.css'
 
@@ -6,8 +7,11 @@ const { TabPane } = Tabs;
 
 function MyPage() {
 
+    // Axios
+    //     .get('/api/myprofile')
+
     const Nickname = () => {
-        return <> 해피 쿼카</>
+        return <>해피 쿼카</>
     }
 
     const Infomation = () => {
