@@ -16,6 +16,7 @@ function LeftMenu(props) {
         Axios
           .get('/api/delete')
           .then(response => {
+            console.log('res>>>', response)
           if (response.status === 200) {
             alert('탈퇴 처리 되었습니다.')
             props

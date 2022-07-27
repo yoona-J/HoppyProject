@@ -11,7 +11,7 @@ function RightMenu(props) {
     // console.log(splitLogKey[1])
     // console.log(localStorage.Authorization)
 
-    if (localStorage.Authorization === undefined) {
+    if (localStorage.Authorization === 'Bearer null') {
       return (
         <Menu mode={props.mode}>
           <Menu.Item key="login">
@@ -20,8 +20,6 @@ function RightMenu(props) {
         </Menu>
       )
     } else {
-      // let jwtToken = splitLogKey[1].slice(0, -6)
-      // console.log(jwtToken)
       return (
         <Menu mode={props.mode}>
           <Menu.Item key="logout">

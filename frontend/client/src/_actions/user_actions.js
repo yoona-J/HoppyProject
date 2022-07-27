@@ -4,7 +4,9 @@ import {
     REGISTER_USER,
     AUTH_USER,
     LOGOUT_USER,
-    SECESSION_USER
+    SECESSION_USER,
+    GET_USER,
+    EDIT_USER,
 } from './types';
 import { USER_SERVER } from '../components/Config.js';
 
@@ -50,12 +52,47 @@ export function logoutUser(){
 
 ///////////////////////
 
-// export function secessionUser() {
-//     const request = axios.get(`/api/delete`)
-//     .then(response => response.data);
+//withCredentials 전역 설정 -- CORS error
+axios.defaults.withCredentials = false;
 
-//     return {
-//         type: SECESSION_USER,
-//         payload: request
-//     }
-// }
+export function secessionUser() {
+    const request = axios.get(`https://hoppy.kro.kr/api/delete`)
+    .then(response => response.data);
+
+    return {
+        type: SECESSION_USER,
+        payload: request
+    }
+}
+
+export function getUser() {
+    const token = localStorage.getItem('Authorization')
+    
+    const request = axios.get(`https://hoppy.kro.kr/api/myprofile`, {
+        headers: {
+            Authorization: token
+        }, withCredentials: false
+    })
+    .then(response => response.data);
+
+    return {
+        type: GET_USER,
+        payload: request
+    }
+}
+
+export function editUser(dataToSubmit) {
+    const token = localStorage.getItem('Authorization')
+    
+    const request = axios.post(`https://hoppy.kro.kr/api/update`, dataToSubmit, {
+        headers: {
+            Authorization: token
+        }, withCredentials: false
+    })
+    .then(response => response.data);
+
+    return {
+        type: EDIT_USER,
+        payload: request
+    }
+}
