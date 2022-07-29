@@ -14,7 +14,6 @@ function LeftMenu(props) {
 
     const handleOk = () => {
         setIsModal(false);
-        // console.log('ok')
 
         const headers = {
           Authorization: token
@@ -29,9 +28,7 @@ function LeftMenu(props) {
             console.log('res>>>', response)
             if (response.data.status === 200) {
               alert('탈퇴가 완료되었습니다.')
-              props
-                .history
-                .push('/')
+              window.location.href = "http://localhost:8888"
             } else {
               alert('탈퇴 처리를 실패했습니다. 다시 시도해주세요.')
             }

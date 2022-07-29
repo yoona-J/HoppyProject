@@ -75,6 +75,7 @@ function MyPage() {
                         width: '142px',
                         height: '142px',
                         marginTop: '48px',
+                        marginRight: '10px',
                         background: '#A5A5A5'
                     }}
                 />
