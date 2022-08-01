@@ -47,7 +47,7 @@ function NavBar() {
           visible={visible}
         >
           <div style={{ marginTop: '100px' }}>
-            <img src={LogoImg} style={{ width: '107px', height: '54px', marginLeft: '25%', marginBottom: '30px'}} />
+            <img src={LogoImg} alt="로고이미지" style={{ width: '107px', height: '54px', marginLeft: '25%', marginBottom: '30px'}} />
             <RightMenu mode="inline" />
             <hr style={{ width: "80%", backgroundColor: "#D3BA9C" }} />
             <LeftMenu mode="inline" />
@@ -56,12 +56,12 @@ function NavBar() {
       </div>
       <div style={{ float: 'right' }}>
         <a href="/notification" className="menu__bell">
-          <img src={Bell} style={{ width: "45px" }} />
+          <img src={Bell} alt="알림" style={{ width: "45px" }} />
         </a>
       </div>
       <div className="menu__logo">
         <a href="/">
-          <img src={LogoImg} style={{ width: "147px" }} />
+          <img src={LogoImg} alt="로고" style={{ width: "147px" }} />
         </a>
       </div>
     </nav>

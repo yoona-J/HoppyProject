@@ -86,13 +86,13 @@ function LandingPage(props) {
         >
           <div style={hobbyBoxStyle}>
             운동
-            <img src={ExerciseImg} style={hobbyImageStyle} />
+            <img src={ExerciseImg} alt='운동' style={hobbyImageStyle} />
           </div>
         </a>
         <a href="/artMeeting" style={{ textDecoration: "none", color: "#000" }}>
           <div style={hobbyBoxStyle}>
             공예
-            <img src={ArtImg} style={hobbyImageStyle} />
+            <img src={ArtImg} alt='공예' style={hobbyImageStyle} />
           </div>
         </a>
         <a
@@ -101,7 +101,7 @@ function LandingPage(props) {
         >
           <div style={hobbyBoxStyle}>
             음악
-            <img src={MusicImg} style={hobbyImageStyle} />
+            <img src={MusicImg} alt='음악' style={hobbyImageStyle} />
           </div>
         </a>
         <a
@@ -110,7 +110,7 @@ function LandingPage(props) {
         >
           <div style={hobbyBoxStyle}>
             일상
-            <img src={DailyImg} style={hobbyImageStyle} />
+            <img src={DailyImg} alt='일상' style={hobbyImageStyle} />
           </div>
         </a>
         <a
@@ -119,7 +119,7 @@ function LandingPage(props) {
         >
           <div style={hobbyBoxStyle}>
             음식
-            <img src={FoodImg} style={hobbyImageStyle} />
+            <img src={FoodImg} alt='음식' style={hobbyImageStyle} />
           </div>
         </a>
         <a
@@ -128,7 +128,7 @@ function LandingPage(props) {
         >
           <div style={hobbyBoxStyle}>
             여행
-            <img src={TripImg} style={hobbyImageStyle} />
+            <img src={TripImg} alt='여행' style={hobbyImageStyle} />
           </div>
         </a>
 
@@ -183,6 +183,7 @@ function LandingPage(props) {
           </div>
           <img
             src={CharacterImg}
+            alt='쿼카'
             style={{
               width: "126px",
               height: "131px",
@@ -242,6 +243,7 @@ function LandingPage(props) {
           </div>
           <img
             src={HobbyStoryImg}
+            alt='Hoppy'
             style={{
               width: "126px",
               height: "131px",
