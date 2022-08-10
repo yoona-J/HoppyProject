@@ -5,6 +5,7 @@ import { Drawer, Button, Icon } from 'antd';
 import './Sections/Navbar.css';
 import LogoImg from './img/logo.png'
 import Bell from './img/Bell.png'
+// import { Link } from 'react-router-dom';
 
 function NavBar() {
   const [visible, setVisible] = useState(false);
@@ -60,9 +61,11 @@ function NavBar() {
         </a>
       </div>
       <div className="menu__logo">
-        <a href="/">
+        {/* <Link to='/'> */}
+        <a href='/'>
           <img src={LogoImg} alt="로고" style={{ width: "147px" }} />
         </a>
+        {/* </Link> */}
       </div>
     </nav>
   );

@@ -1,0 +1,8 @@
+.uploadListStyle .ant-upload-list-item {
+    float: left;
+    width: 350px;
+    height: 68px;
+    border-radius: 11px;
+    margin-left: 10px;
+    padding: auto;
+}

@@ -21,6 +21,7 @@ function LandingPage(props) {
   const param = new URLSearchParams(props.location.search);
   console.log('jwtToken>>>>>', param.get("token"))
   const jwtToken = param.get("token");
+  // const jwtToken = headers.get("Authorization")
 
   if (jwtToken !== undefined) {
     localStorage.setItem('Authorization', `Bearer ${jwtToken}`);
@@ -228,7 +229,7 @@ function LandingPage(props) {
               일상을 기록하는
             </p>
             <Button
-              href="/hobbyStory"
+              href="/hobbystory"
               style={{
                 width: "128px",
                 height: "38px",

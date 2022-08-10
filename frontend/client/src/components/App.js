@@ -25,8 +25,9 @@ import MusicMeetingPage from "./views/MusicMeetingPage/MusicMeetingPage";
 import TripMeetingPage from "./views/TripMeetingPage/TripMeetingPage";
 
 import HobbyStoryPage from "./views/HobbyStoryPage/HobbyStoryPage";
-import MakeMeetingPage from "./views/MakeMeetingPage/MakeMeetingPage";
+import MakeStoryPage from "./views/MakeStoryPage/MakeStoryPage"
 
+import MakeMeetingPage from "./views/MakeMeetingPage/MakeMeetingPage";
 import UploadExercise from "./views/MakeMeetingPage/UploadMeetingPage/UploadExercise";
 import UploadArt from "./views/MakeMeetingPage/UploadMeetingPage/UploadArt";
 import UploadDaily from "./views/MakeMeetingPage/UploadMeetingPage/UploadDaily";
@@ -84,7 +85,8 @@ function App() {
           <Route exact path="/makeMeeting/trip" component={(UploadTrip)} />
 
           {/* 스토리 */}
-          <Route exact path="/hobbyStory" component={(HobbyStoryPage)} />
+          <Route exact path="/hobbystory" component={(HobbyStoryPage)} />
+          <Route exact path="/hobbystory/upload" component={(MakeStoryPage)} />
         </Switch>
       </div>
       <Footer />
