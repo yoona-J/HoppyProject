@@ -68,8 +68,6 @@ function HobbyStoryPage(props) {
                         const url = new URL(response.url)
                         setFileName(url.origin + url.pathname)
                         alert("사진 업로드에 성공했습니다.")
-                        return <>
-                        </>
                     } else {
                         alert("사진 업로드에 실패했습니다.")
                     }

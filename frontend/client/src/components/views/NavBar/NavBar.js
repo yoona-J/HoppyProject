@@ -18,6 +18,9 @@ function NavBar() {
     setVisible(false);
   };
 
+  // const token = localStorage.getItem('Authorization')
+  // console.log(token)
+
   return (
     <nav
       className="menu"
@@ -61,11 +64,9 @@ function NavBar() {
         </a>
       </div>
       <div className="menu__logo">
-        {/* <Link to='/'> */}
         <a href='/'>
           <img src={LogoImg} alt="로고" style={{ width: "147px" }} />
         </a>
-        {/* </Link> */}
       </div>
     </nav>
   );

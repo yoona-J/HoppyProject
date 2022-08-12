@@ -57,7 +57,7 @@ function App() {
           <Route exact path="/" component={(LandingPage)} />
 
           <Route exact path="/login" component={(KakaoLoginPage)} />
-          <Route exact path="/login/oauth2/code/kakao" component={(AuthRedirectHandler)} />
+          <Route exact path="/login/auth/kakao" component={(AuthRedirectHandler)} />
 
           <Route exact path="/notification" component={(NotificationPage)} />
 
