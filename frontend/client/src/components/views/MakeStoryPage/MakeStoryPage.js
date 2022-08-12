@@ -27,6 +27,38 @@ function HobbyStoryPage(props) {
         setFileName(event.target.value)
     }
 
+    const uploadHandler = () => {
+        return <>
+            <div
+                            style={{
+                                width: '109px',
+                                height: '75px',
+                                border: '1px solid',
+                                color: 'gray',
+                                borderRadius: '11px',
+                                margin: '16px 20px 0px 11px',
+                                padding: '9px'
+                            }}>
+                            <Avatar
+                                shape="square"
+                                size={55}
+                                src={FileName}
+                                onChange={fileNameHandler}
+                                value={FileName}
+                                style={{
+                                    float: 'left'
+                                }}/>
+                            <Icon
+                                type='delete'
+                                style={{
+                                    fontSize: '20px',
+                                    float: 'right',
+                                    marginTop: '15px'
+                                }}/>
+                        </div>
+        </>
+    }
+
     const onChange = (event) => {
         if (event.target.files[0]) {
             //업로딩이 되면
@@ -73,8 +105,6 @@ function HobbyStoryPage(props) {
                     }
                 })
             setFile(event.target.files[0])
-        } else {
-            return
         }
         //프로필 사진 나타내기
         const reader = new FileReader();
@@ -87,7 +117,7 @@ function HobbyStoryPage(props) {
         reader.readAsDataURL(event.target.files[0])
     }
 
-    console.log('Filename >>>', FileName)
+    // console.log('Filename >>>', FileName)
 
     //글 올리기 버튼 event-handler
     const submitHandler = (event) => {
@@ -214,14 +244,12 @@ function HobbyStoryPage(props) {
                             ref={fileInput}/>
                         <div
                             style={{
-                                display: 'inline-block',
-                                width: '349px',
+                                width: '109px',
                                 height: '75px',
                                 border: '1px solid',
                                 color: 'gray',
                                 borderRadius: '11px',
                                 margin: '16px 20px 0px 11px',
-                                textAlign: 'center',
                                 padding: '9px'
                             }}>
                             <Avatar
@@ -233,19 +261,13 @@ function HobbyStoryPage(props) {
                                 style={{
                                     float: 'left'
                                 }}/>
-                            <p
-                                style={{
-                                    float: 'left',
-                                    marginLeft: '5px',
-                                    marginTop: '15px'
-                                }}>image.jpg</p>
-                            {/* <Icon
+                            <Icon
                                 type='delete'
                                 style={{
                                     fontSize: '20px',
                                     float: 'right',
                                     marginTop: '15px'
-                                }}/> */}
+                                }}/>
                         </div>
                         <Button
                             htmlType='submit'
