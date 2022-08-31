@@ -23,7 +23,7 @@ function HobbyStoryPage() {
         .then(response => {
             if(response.data.status === 200 && response.data !== undefined) {
                 console.log('response.data.data', response.data.data.nextPagingUrl)
-                setStoryList(response.data.data.storyList)
+                setStoryList(response.data.data.storyDtoList)
                 setPagination(response.data.data.nextPagingUrl)
             } else {
                 alert("데이터 불러오기를 실패했습니다.")
@@ -57,12 +57,6 @@ function HobbyStoryPage() {
                 </>
             }
         }
-
-        //무한 스크롤
-        //https://piaflu.tistory.com/125
-        //lastId : https://hianna.tistory.com/465
-
-        console.log(window.scrollY, document.documentElement.clientHeight, document.documentElement.scrollHeight);
 
         return <div
         style={{
@@ -141,6 +135,34 @@ function HobbyStoryPage() {
     </div>
     })
 
+    
+    //무한 스크롤
+    //https://piaflu.tistory.com/125
+    //lastId : https://hianna.tistory.com/465
+
+    console.log(window.scrollY, document.documentElement.clientHeight, document.documentElement.scrollHeight);
+
+    console.log('pagenation', Pagination)
+    const LastId = Pagination.substr(38)
+
+    useEffect(() => {
+      function InfinityScroll() {
+        if (window.scrollY + document.documentElement.clientHeight > document.documentElement.scrollHeight - 10) {
+            Axios
+                .get(`https://hoppy.kro.kr/api/story?lastId=${LastId}`)
+                .then(response => {
+                    console.log(response)
+                })
+        }
+      }
+      window.addEventListener('scroll', InfinityScroll);
+
+      return() => {
+        window.addEventListener('scroll', InfinityScroll)
+      }
+    }, [])
+
+
 
     return (
         <div
@@ -164,9 +186,9 @@ function HobbyStoryPage() {
                         {storyCard}
                     </div>
                     <a href='/hobbystory/upload'>
-                    <Button shape='circle' style={{background: '#D3BA9C', width: '40px', height: '40px', position: 'fixed', right: 0, bottom: 0, margin: '0px 15px 50px 0px'}}>
-                        <Icon type='plus' style={{color: '#fff', fontSize: '20px'}} />
-                    </Button>
+                        <Button shape='circle' style={{background: '#D3BA9C', width: '40px', height: '40px', position: 'fixed', right: 0, bottom: 0, margin: '0px 15px 50px 0px'}}>
+                            <Icon type='plus' style={{color: '#fff', fontSize: '20px'}} />
+                        </Button>
                     </a>
             </div>
         </div>
