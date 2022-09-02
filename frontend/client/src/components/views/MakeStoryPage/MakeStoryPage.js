@@ -48,6 +48,7 @@ function HobbyStoryPage(props) {
                     {headers, withCredentials: false}
                 )
                 .then(response => {
+                    console.log('resres', response)
                     if (response.data.status === 200) {
                         setFile(response.data.data.url)
                     }
@@ -94,7 +95,9 @@ function HobbyStoryPage(props) {
             return alert("제목과 내용을 입력해주세요.")
         }
 
-        if (Title && Content) {
+        console.log('F', FileName)
+
+        if (Title && Content && FileName === "") {
             const body = {
                 title: Title,
                 content: Content,
