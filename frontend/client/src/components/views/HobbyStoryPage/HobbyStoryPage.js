@@ -46,7 +46,7 @@ function HobbyStoryPage() {
         let createDate = story.createdDate
         let datestr = createDate.substr(0, 10)
         let timestr = createDate.substr(11, 15)
-        let datemoment = moment(datestr, 'YYYY-MM-DD').add(5, 'days').format('MM/DD')
+        let datemoment = moment(datestr, 'YYYY-MM-DD').add('days').format('MM/DD')
         let timemoment = moment(timestr, 'h:mm::ss').format(' h:mm')
         let date = datemoment + timemoment
 
