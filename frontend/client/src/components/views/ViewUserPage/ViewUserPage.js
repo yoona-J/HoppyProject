@@ -1,9 +1,41 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Avatar } from 'antd'
+import Axios from 'axios';
 
 function ViewUserPage(props) {
 
     console.log('props', props)
+
+    const [Member, setMember] = useState([])
+    
+    const token = localStorage.getItem('Authorization')
+    const headers = {
+        Authorization: token
+    }
+
+    async function getMemberList() {
+        await Axios
+            .get(`https://hoppy.kro.kr/api/profile/member?id=${props.match.params.userId}`, {
+                headers,
+                withCredentials: false
+            })
+            .then(response => {
+                if(response.data.status === 200) {
+                    console.log('response =>', response)
+                    setMember(response.data.data)
+                } else {
+                    alert("유저 정보를 불러오는 데 실패했습니다.")
+                }
+            })
+    }
+
+    useEffect(() => {
+        getMemberList()
+    }, [])
+
+    console.log('member', Member)
+    
+    
   
     return (
         <div
@@ -17,24 +49,27 @@ function ViewUserPage(props) {
                     margin: '3rem auto'
                 }}>
                 <Avatar
+                    src={Member.profileUrl}
                     style={{
                         width: '142px',
                         height: '142px',
-                        marginTop: '48px',
+                        marginTop: '21px',
                         marginRight: '10px',
                         background: '#A5A5A5'
                     }}
                 />
                 <p style={{
-                        marginTop: '16px'
-                    }}>해피 쿼카</p>
+                        marginTop: '16px',
+                        textAlign: 'center',
+                        marginLeft: '-10px'
+                    }}>{Member.username}</p>
                 <p
                     style={{
                         textAlign: 'left',
                         margin: '30px 0px 0px 27px',
                         fontSize: '12px',
                         color: '#858585'
-                    }}>다른 사람들에게 자신을 소개해주세요!</p>
+                    }}>소개글</p>
                 <div
                     style={{
                         width: '90%',
@@ -56,13 +91,13 @@ function ViewUserPage(props) {
                             wordBreak: 'break-all',
                             overflowY: 'auto'
                         }}>
-                        안녕
+                        {Member.intro}
                     </div>
                 </div>
                 <p
                     style={{
                         margin: '36px 0px 0px 30px',
-                        fontSize: '19px',
+                        fontSize: '12px',
                         textAlign: 'left'
                     }}>가입한 모임</p>
                 <a href='/mypage/mystory'>
@@ -77,7 +112,7 @@ function ViewUserPage(props) {
                                 margin: '18px 0px 0px 0px',
                                 fontSize: '12px',
                                 display: 'inline-block'
-                            }}>풋살 모임</p>
+                            }}>우리 동네 풋살 모임</p>
                         <hr
                             style={{
                                 width: '90%',

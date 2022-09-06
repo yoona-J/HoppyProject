@@ -6,8 +6,9 @@ import {
 //withCredentials 전역 설정 -- CORS error
 axios.defaults.withCredentials = false;
 
+const token = localStorage.getItem('Authorization')
+
 export function getUser() {
-    const token = localStorage.getItem('Authorization')
     
     const request = axios.get(`https://hoppy.kro.kr/api/profile`, {
         headers: {

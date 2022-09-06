@@ -4,7 +4,7 @@ import { Button, Icon, Avatar } from 'antd'
 import React, { useState, useEffect } from 'react'
 import Axios from 'axios'
 import moment from 'moment'
-import InfiniteScroll from 'react-infinite-scroll-component'
+import InfiniteScroll from 'react-infinite-scroll-component';
 
 function HobbyStoryPage() {
 
@@ -69,7 +69,7 @@ function HobbyStoryPage() {
         }}
         key={index}>
         <div>
-            <a href={`/user`}>
+            <a href={`/user/${story.memberId}`}>
             <Avatar
                 size={27}
                 src={story.profileUrl}

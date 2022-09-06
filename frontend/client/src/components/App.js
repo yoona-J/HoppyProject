@@ -27,7 +27,7 @@ import TripMeetingPage from "./views/TripMeetingPage/TripMeetingPage";
 
 import HobbyStoryPage from "./views/HobbyStoryPage/HobbyStoryPage";
 import MakeStoryPage from "./views/MakeStoryPage/MakeStoryPage";
-import ViewUserPage from "./views/HobbyStoryPage/ViewUserPage/ViewUserPage";
+import ViewUserPage from "./views/ViewUserPage/ViewUserPage";
 
 import MakeMeetingPage from "./views/MakeMeetingPage/MakeMeetingPage";
 import UploadExercise from "./views/MakeMeetingPage/UploadMeetingPage/UploadExercise";
