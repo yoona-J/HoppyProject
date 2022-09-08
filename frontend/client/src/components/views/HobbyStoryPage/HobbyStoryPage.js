@@ -90,25 +90,27 @@ function HobbyStoryPage() {
                     marginTop: '15px'
                 }}>{date}</p>
         </div>
-        <div
-            style={{
-                display: 'inline-block',
-                width: '100%',
-                whiteSpace: 'pre-wrap',
-                wordBreak: 'break-all'
-            }}>
-            <p
+        <a href={`/hobbystory/${story.id}`} style={{textDecoration: 'none', color: '#000'}} >
+            <div
                 style={{
-                    textAlign: 'left',
-                    fontSize: '11px'
-                }}>{story.title}</p>
-            <p
-                style={{
-                    textAlign: 'left',
-                    fontSize: '9px'
-                }}>{story.content}</p>
-                {image()}
-        </div>
+                    display: 'inline-block',
+                    width: '100%',
+                    whiteSpace: 'pre-wrap',
+                    wordBreak: 'break-all'
+                }}>
+                <p
+                    style={{
+                        textAlign: 'left',
+                        fontSize: '11px'
+                    }}>{story.title}</p>
+                <p
+                    style={{
+                        textAlign: 'left',
+                        fontSize: '9px'
+                    }}>{story.content}</p>
+                    {image()}
+            </div>
+        </a>
         <div
             style={{
                 display: 'inline-flex',
@@ -199,13 +201,13 @@ function HobbyStoryPage() {
                         marginLeft: '27px',
                         fontSize: '16px'
                     }}>취미 스토리</p>
-                    <hr style={{width: '90%', backgroundColor: '#D3BA9C'}} />
-                    <InfiniteScroll
-                        dataLength={StoryList.length}
-                        next={InfinityScroll}
-                        hasMore={MoreLoad}>
-                        {storyCard}
-                    </InfiniteScroll>
+                    <hr style={{width: '90%', backgroundColor: '#D3BA9C', border: 0, height: '1px'}} />
+                        <InfiniteScroll
+                            dataLength={StoryList.length}
+                            next={InfinityScroll}
+                            hasMore={MoreLoad}>
+                            {storyCard}
+                        </InfiniteScroll>
                     <a href='/hobbystory/upload'>
                         <Button shape='circle' style={{background: '#D3BA9C', width: '40px', height: '40px', position: 'fixed', right: 0, bottom: 0, margin: '0px 15px 50px 0px'}}>
                             <Icon type='plus' style={{color: '#fff', fontSize: '20px'}} />

@@ -238,6 +238,9 @@ function LandingPage() {
             }}
           />
         </div>
+        <div>
+          {/* 배너 광고 자리 */}
+        </div>
       </div>
     </div>
   );

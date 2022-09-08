@@ -74,11 +74,13 @@ function MyPage() {
                         height: '142px',
                         marginTop: '48px',
                         marginRight: '10px',
-                        background: '#A5A5A5'
+                        background: '#A5A5A5',
+                        textAlign: 'center'
                     }}
                 />
                 <p style={{
-                        marginTop: '16px'
+                        marginTop: '16px',
+                        textAlign: 'center'
                     }}>반가워요 {UserName}님!</p>
                 <p
                     style={{

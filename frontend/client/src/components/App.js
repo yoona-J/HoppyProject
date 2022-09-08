@@ -27,6 +27,7 @@ import TripMeetingPage from "./views/TripMeetingPage/TripMeetingPage";
 
 import HobbyStoryPage from "./views/HobbyStoryPage/HobbyStoryPage";
 import MakeStoryPage from "./views/MakeStoryPage/MakeStoryPage";
+import DetailStoryPage from "./views/HobbyStoryPage/DetailStoryPage.js";
 import ViewUserPage from "./views/ViewUserPage/ViewUserPage";
 
 import MakeMeetingPage from "./views/MakeMeetingPage/MakeMeetingPage";
@@ -90,6 +91,7 @@ function App() {
           {/* 스토리 */}
           <Route exact path="/hobbystory" component={(HobbyStoryPage)} />
           <Route exact path="/hobbystory/upload" component={(MakeStoryPage)} />
+          <Route exact path="/hobbystory/:storyId" component={(DetailStoryPage)} />
 
           {/* 사용자 프로필 */}
           <Route exact path="/user/:userId" component={(ViewUserPage)} />
