@@ -117,13 +117,13 @@ function HobbyStoryPage() {
                 width: '100%',
                 justifyContent: 'flex-end',
                 alignItems: 'stretch',
-                gap: '5px',
-                padding: '0px 5px 0px 0px',
+                gap: '7px'
             }}>
             <Icon
                 type='heart'
                 style={{
-                    fontSize: '20px'
+                    fontSize: '16px',
+                    marginTop: '2px'
                 }}/>
             <p>
                 {story.likeCount}
@@ -131,7 +131,8 @@ function HobbyStoryPage() {
             <Icon
                 type='message'
                 style={{
-                    fontSize: '20px'
+                    fontSize: '16px',
+                    marginTop: '2px'
                 }}/>
             <p>
                 {story.replyCount}
