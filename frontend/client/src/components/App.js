@@ -95,7 +95,7 @@ function App() {
           <Route exact path="/hobbystory" component={(HobbyStoryPage)} />
           <Route exact path="/hobbystory/upload" component={(MakeStoryPage)} />
           <Route exact path="/hobbystory/:storyId" component={(DetailStoryPage)} />
-          <Route exact path="/hobbystory/edit" component={(EditDetailStoryPage)} />
+          <Route exact path="/hobbystory/:storyId/edit" component={(EditDetailStoryPage)} />
 
           {/* 사용자 프로필 */}
           <Route exact path="/user/:userId" component={(ViewUserPage)} />

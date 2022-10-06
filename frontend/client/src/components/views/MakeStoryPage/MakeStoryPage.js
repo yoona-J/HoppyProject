@@ -77,7 +77,7 @@ function HobbyStoryPage(props) {
         } else {
             return
         }
-        //프로필 사진 나타내기
+        //스토리 사진 나타내기
         const reader = new FileReader();
         reader.onload = () => {
             console.log('reader.readyState', reader)
