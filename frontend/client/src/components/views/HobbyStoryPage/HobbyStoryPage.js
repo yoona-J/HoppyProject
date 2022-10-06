@@ -90,27 +90,29 @@ function HobbyStoryPage() {
                     marginTop: '15px'
                 }}>{date}</p>
         </div>
-        <a href={`/hobbystory/${story.id}`} style={{textDecoration: 'none', color: '#000'}} >
-            <div
-                style={{
-                    display: 'inline-block',
-                    width: '100%',
-                    whiteSpace: 'pre-wrap',
-                    wordBreak: 'break-all'
-                }}>
-                <p
+        <div>
+            <a href={`/hobbystory/${story.id}`} style={{textDecoration: 'none', color: '#000'}} >
+                <div
                     style={{
-                        textAlign: 'left',
-                        fontSize: '11px'
-                    }}>{story.title}</p>
-                <p
-                    style={{
-                        textAlign: 'left',
-                        fontSize: '9px'
-                    }}>{story.content}</p>
-                    {image()}
-            </div>
-        </a>
+                        display: 'inline-block',
+                        width: '100%',
+                        whiteSpace: 'pre-wrap',
+                        wordBreak: 'break-all'
+                    }}>
+                            <p
+                                style={{
+                                    textAlign: 'left',
+                                    fontSize: '11px'
+                                }}>{story.title}</p>
+                            <p
+                                style={{
+                                    textAlign: 'left',
+                                    fontSize: '9px'
+                                }}>{story.content}</p>
+                        {image()}
+                </div>
+            </a>
+        </div>
         <div
             style={{
                 display: 'inline-flex',

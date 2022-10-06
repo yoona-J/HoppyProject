@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { Avatar, Button, Icon, Drawer } from 'antd'
 import Axios from 'axios'
 import React, { useState, useEffect } from 'react'
@@ -5,14 +7,14 @@ import moment from 'moment'
 
 function DetailStoryPage(props) {
 
-    const [open, setOpen] = useState(false);
+    const [visible, setVisible] = useState(false);
 
     const showDrawer = () => {
-        setOpen(true);
+        setVisible(true);
     };
 
     const onClose = () => {
-        setOpen(false);
+        setVisible(false);
     };
 
     const storyId = props.match.params.storyId
@@ -44,6 +46,8 @@ function DetailStoryPage(props) {
 
     console.log(StoryDetail)
 
+    
+
     let createDate = StoryDetail.createdDate + ""
     let datestr = createDate.substr(0, 10)
     let timestr = createDate.substr(11, 15)
@@ -74,13 +78,15 @@ function DetailStoryPage(props) {
                 <Icon type='more' style={{paddingTop: '13px'}} />
             </Button>
             <Drawer
-                title="Basic Drawer"
-                placement='right'
+                title=""
+                placement= 'bottom'
+                closable={false}
                 onClose={onClose}
-                open={open}
+                visible={visible}
+                height={160}
             >
-                <Button>수정하기</Button>
-                <Button>삭제하기</Button>
+                <Button style={{width: '100%', height: '52px', borderRadius: '13px', marginBottom: '7px'}}>수정하기</Button>
+                <Button style={{width: '100%', height: '52px', borderRadius: '13px'}}>삭제하기</Button>
             </Drawer>
         </div>
         <div>

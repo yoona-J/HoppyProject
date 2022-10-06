@@ -13,6 +13,7 @@ import NotificationPage from "./views/NotificationPage/NotificationPage";
 import AuthRedirectHandler from "./views/LoginPage/KakaoLogin/AuthRedirectHandler";
 import KakaoLoginPage from "./views/LoginPage/KakaoLogin/KakaoLoginPage";
 import LogoutPage from "./views/LogoutPage/LogoutPage.js";
+import LogoutHandler from "./views/LogoutPage/LogoutHandler";
 
 import MyPage from "./views/MyPage/MyPage";
 import EditMyPage from "./views/MyPage/EditMyPage.js";
@@ -28,6 +29,7 @@ import TripMeetingPage from "./views/TripMeetingPage/TripMeetingPage";
 import HobbyStoryPage from "./views/HobbyStoryPage/HobbyStoryPage";
 import MakeStoryPage from "./views/MakeStoryPage/MakeStoryPage";
 import DetailStoryPage from "./views/HobbyStoryPage/DetailStoryPage.js";
+import EditDetailStoryPage from "./views/HobbyStoryPage/EditDetailStoryPage.js";
 import ViewUserPage from "./views/ViewUserPage/ViewUserPage";
 
 import MakeMeetingPage from "./views/MakeMeetingPage/MakeMeetingPage";
@@ -62,6 +64,7 @@ function App() {
           <Route exact path="/login" component={(KakaoLoginPage)} />
           <Route exact path="/login/auth/kakao" component={(AuthRedirectHandler)} />
           <Route exact path="/logout" component={(LogoutPage)} />
+          <Route exact path="/auth/logout" component={(LogoutHandler)} />
 
           <Route exact path="/notification" component={(NotificationPage)} />
 
@@ -92,6 +95,7 @@ function App() {
           <Route exact path="/hobbystory" component={(HobbyStoryPage)} />
           <Route exact path="/hobbystory/upload" component={(MakeStoryPage)} />
           <Route exact path="/hobbystory/:storyId" component={(DetailStoryPage)} />
+          <Route exact path="/hobbystory/edit" component={(EditDetailStoryPage)} />
 
           {/* 사용자 프로필 */}
           <Route exact path="/user/:userId" component={(ViewUserPage)} />
