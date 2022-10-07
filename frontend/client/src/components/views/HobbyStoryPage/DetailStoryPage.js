@@ -175,7 +175,7 @@ function DetailStoryPage(props) {
                 visible={visible}
                 height={100}
             >
-                <a href={`/hobbystory/${StoryDetail.id}/edit`}>
+                <a href={`/report`}>
                     <Button style={{width: '100%', height: '52px', borderRadius: '13px', marginBottom: '7px'}}>
                         신고하기
                     </Button>

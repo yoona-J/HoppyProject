@@ -40,6 +40,8 @@ import UploadFood from "./views/MakeMeetingPage/UploadMeetingPage/UploadFood";
 import UploadMusic from "./views/MakeMeetingPage/UploadMeetingPage/UploadMusic";
 import UploadTrip from "./views/MakeMeetingPage/UploadMeetingPage/UploadTrip";
 
+import ReportPage from "./views/ReportPage/ReportPage.js";
+
 //null   Anyone Can go inside
 //true   only logged in user can go inside
 //false  logged in user can't go inside
@@ -96,6 +98,9 @@ function App() {
           <Route exact path="/hobbystory/upload" component={(MakeStoryPage)} />
           <Route exact path="/hobbystory/:storyId" component={(DetailStoryPage)} />
           <Route exact path="/hobbystory/:storyId/edit" component={(EditDetailStoryPage)} />
+
+          {/* 신고 페이지 */}
+          <Route exact path="/report" component={(ReportPage)} />
 
           {/* 사용자 프로필 */}
           <Route exact path="/user/:userId" component={(ViewUserPage)} />
