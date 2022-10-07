@@ -125,17 +125,10 @@ function DetailStoryPage(props) {
         }
     }
 
-  return (
-    <div style={{width: '90%', margin: '0rem auto'}}>
-        <hr style={{width: '100%', backgroundColor: '#D3BA9C', border: 0, height: '1px'}} />
-        <div style={{width: '100%', display: 'inline-flex', justifyContent: 'flex-start', alignItems: 'stretch', gap: '5px'}}>
-            <Avatar size={27} style={{ marginTop: '11px'}} src={StoryDetail.profileUrl}/>
-            <p style={{marginTop: '14px'}}>{StoryDetail.username}</p>
-            <p style={{fontSize: '8px', marginLeft: 'auto', paddingTop: '13px'}}>{date}</p>
-            <Button style={{ border: 0, outline: 0, color: '#000', padding: 0 }} onClick={showDrawer}>
-                <Icon type='more' style={{paddingTop: '13px'}} />
-            </Button>
-            <Drawer
+    const moreButton = () => {
+        if (StoryDetail.memberId === userId) {
+            return <>
+                <Drawer
                 title=""
                 placement= 'bottom'
                 closable={false}
@@ -171,6 +164,38 @@ function DetailStoryPage(props) {
                   </div>
             </Modal>
             </Drawer>
+            </>
+        } else if (StoryDetail.memberId !== userId) {
+            return <>
+                <Drawer
+                title=""
+                placement= 'bottom'
+                closable={false}
+                onClose={onClose}
+                visible={visible}
+                height={100}
+            >
+                <a href={`/hobbystory/${StoryDetail.id}/edit`}>
+                    <Button style={{width: '100%', height: '52px', borderRadius: '13px', marginBottom: '7px'}}>
+                        신고하기
+                    </Button>
+                </a>
+            </Drawer>
+            </>
+        }
+    }
+
+  return (
+    <div style={{width: '90%', margin: '0rem auto'}}>
+        <hr style={{width: '100%', backgroundColor: '#D3BA9C', border: 0, height: '1px'}} />
+        <div style={{width: '100%', display: 'inline-flex', justifyContent: 'flex-start', alignItems: 'stretch', gap: '5px'}}>
+            <Avatar size={27} style={{ marginTop: '11px'}} src={StoryDetail.profileUrl}/>
+            <p style={{marginTop: '14px'}}>{StoryDetail.username}</p>
+            <p style={{fontSize: '8px', marginLeft: 'auto', paddingTop: '13px'}}>{date}</p>
+            <Button style={{ border: 0, outline: 0, color: '#000', padding: 0 }} onClick={showDrawer}>
+                <Icon type='more' style={{paddingTop: '13px'}} />
+            </Button>
+            {moreButton()}
         </div>
         <div>
             <div
