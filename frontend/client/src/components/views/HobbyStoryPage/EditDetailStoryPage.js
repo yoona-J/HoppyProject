@@ -35,6 +35,11 @@ function EditDetailStoryPage(props) {
     }, [])
 
     console.log(StoryContent)
+    console.log('ff', StoryContent.filename)
+
+    let imagename = "" + StoryContent.filename
+    let imageName = imagename.substring(53)
+    console.log(imageName)
 
     //edit form
     const [EditTitle, setEditTitle] = useState('')
@@ -60,7 +65,6 @@ function EditDetailStoryPage(props) {
 
     const onChange = (event) => {
         if (event.target.files[0]) {
-            //업로딩이 되면
             console.log('event.target.files[0]', event.target.files[0])
             setName(event.target.files[0].name)
             const targetFile = event.target.files[0];
@@ -122,35 +126,198 @@ function EditDetailStoryPage(props) {
         if (!EditTitle && !EditContent && !EditFileName) {
             return alert("수정된 사항이 없습니다.")
         }
-
-        if (StoryContent.filename === undefined || EditFileName === undefined) {
-
-        } else {
-            if (EditTitle && !EditContent && !EditFileName) {
-                const body = {
-                    title: EditTitle,
-                    content: StoryContent.content,
-                    filename: StoryContent.filename
-                }
-
-                const headers = {
-                    Authorization: token
-                }
-
-                Axios
-                    .put(`https://hoppy.kro.kr/api/story?id=${storyId}`, body, {
-                        headers,
-                        withCredentials: false
-                    })
-                    .then(response => {
-                        console.log('response >>', response)
-                    })
+        if (EditTitle && !EditContent && !EditFileName) {
+            const body = {
+                title: EditTitle,
+                content: StoryContent.content,
+                filename: StoryContent.filename
             }
+
+            const headers = {
+                Authorization: token
+            }
+
+            Axios
+                .put(`https://hoppy.kro.kr/api/story?id=${storyId}`, body, {
+                    headers,
+                    withCredentials: false
+                })
+                .then(response => {
+                    console.log('response >>', response)
+                    if (response.status === 200) {
+                        alert('스토리 수정이 완료되었습니다.')
+                        props
+                            .history
+                            .push(`/hobbystory/${storyId}`)
+                    } else {
+                        alert('스토리 수정에 실패했습니다. 다시 시도해주세요.')
+                    }
+                })
+        } else if (!EditTitle && EditContent && !EditFileName) {
+            const body = {
+                title: StoryContent.title,
+                content: EditContent,
+                filename: StoryContent.filename
+            }
+
+            const headers = {
+                Authorization: token
+            }
+
+            Axios
+                .put(`https://hoppy.kro.kr/api/story?id=${storyId}`, body, {
+                    headers,
+                    withCredentials: false
+                })
+                .then(response => {
+                    console.log('response >>', response)
+                    if (response.status === 200) {
+                        alert('스토리 수정이 완료되었습니다.')
+                        props
+                            .history
+                            .push(`/hobbystory/${storyId}`)
+                    } else {
+                        alert('스토리 수정에 실패했습니다. 다시 시도해주세요.')
+                    }
+                })
+        } else if (!EditTitle && !EditContent && EditFileName) {
+            const body = {
+                title: StoryContent.title,
+                content: StoryContent.content,
+                filename: EditFileName
+            }
+
+            const headers = {
+                Authorization: token
+            }
+
+            Axios
+                .put(`https://hoppy.kro.kr/api/story?id=${storyId}`, body, {
+                    headers,
+                    withCredentials: false
+                })
+                .then(response => {
+                    console.log('response >>', response)
+                    if (response.status === 200) {
+                        alert('스토리 수정이 완료되었습니다.')
+                        props
+                            .history
+                            .push(`/hobbystory/${storyId}`)
+                    } else {
+                        alert('스토리 수정에 실패했습니다. 다시 시도해주세요.')
+                    }
+                })
+        } else if (EditTitle && EditContent && !EditFileName) {
+            const body = {
+                title: EditTitle,
+                content: EditContent,
+                filename: StoryContent.filename
+            }
+
+            const headers = {
+                Authorization: token
+            }
+
+            Axios
+                .put(`https://hoppy.kro.kr/api/story?id=${storyId}`, body, {
+                    headers,
+                    withCredentials: false
+                })
+                .then(response => {
+                    console.log('response >>', response)
+                    if (response.status === 200) {
+                        alert('스토리 수정이 완료되었습니다.')
+                        props
+                            .history
+                            .push(`/hobbystory/${storyId}`)
+                    } else {
+                        alert('스토리 수정에 실패했습니다. 다시 시도해주세요.')
+                    }
+                })
+        } else if (EditTitle && !EditContent && EditFileName) {
+            const body = {
+                title: EditTitle,
+                content: StoryContent.content,
+                filename: EditFileName
+            }
+
+            const headers = {
+                Authorization: token
+            }
+
+            Axios
+                .put(`https://hoppy.kro.kr/api/story?id=${storyId}`, body, {
+                    headers,
+                    withCredentials: false
+                })
+                .then(response => {
+                    console.log('response >>', response)
+                    if (response.status === 200) {
+                        alert('스토리 수정이 완료되었습니다.')
+                        props
+                            .history
+                            .push(`/hobbystory/${storyId}`)
+                    } else {
+                        alert('스토리 수정에 실패했습니다. 다시 시도해주세요.')
+                    }
+                })
+        } else if (!EditTitle && EditContent && EditFileName) {
+            const body = {
+                title: StoryContent.title,
+                content: EditContent,
+                filename: EditFileName
+            }
+
+            const headers = {
+                Authorization: token
+            }
+
+            Axios
+                .put(`https://hoppy.kro.kr/api/story?id=${storyId}`, body, {
+                    headers,
+                    withCredentials: false
+                })
+                .then(response => {
+                    console.log('response >>', response)
+                    if (response.status === 200) {
+                        alert('스토리 수정이 완료되었습니다.')
+                        props
+                            .history
+                            .push(`/hobbystory/${storyId}`)
+                    } else {
+                        alert('스토리 수정에 실패했습니다. 다시 시도해주세요.')
+                    }
+                })
+        } else if (EditTitle && EditContent && EditFileName) {
+            const body = {
+                title: EditTitle,
+                content: EditContent,
+                filename: EditFileName
+            }
+
+            const headers = {
+                Authorization: token
+            }
+
+            Axios
+                .put(`https://hoppy.kro.kr/api/story?id=${storyId}`, body, {
+                    headers,
+                    withCredentials: false
+                })
+                .then(response => {
+                    console.log('response >>', response)
+                    if (response.status === 200) {
+                        alert('스토리 수정이 완료되었습니다.')
+                        props
+                            .history
+                            .push(`/hobbystory/${storyId}`)
+                    } else {
+                        alert('스토리 수정에 실패했습니다. 다시 시도해주세요.')
+                    }
+                })
         }
     }
-
     
-
   return (
     <div
             style={{
@@ -170,7 +337,9 @@ function EditDetailStoryPage(props) {
                     }}>취미 스토리</p>
                 <Form onSubmitCapture={submitHandler}>
                     <div>
+                        <p>
                         <Input
+                            type='text'
                             placeholder={StoryContent.title}
                             onChange={editTitleHandler}
                             value={EditTitle}
@@ -181,8 +350,8 @@ function EditDetailStoryPage(props) {
                                 borderRadius: "14px",
                                 margin: "10px 10px 16px 11px",
                                 fontSize: "12px"
-                            }}>
-                        </Input>
+                            }} />
+                            </p>
                         <TextArea
                             type='textarea'
                             placeholder={StoryContent.content}
@@ -198,7 +367,8 @@ function EditDetailStoryPage(props) {
                                 whiteSpace: 'pre-wrap',
                                 wordBreak: 'break-all'
                             }}
-                            maxLength={1000}/>
+                            maxLength={1000}>
+                                </TextArea>
                         <label htmlFor='image-button'>
                             <Icon
                                 type="camera"
@@ -234,8 +404,13 @@ function EditDetailStoryPage(props) {
                                 value={EditFileName}
                                 shape="square"
                                 size={55} />
-                                <p style={{width: '250px', marginTop: '12px'}}>
-                                    {Name}
+                                <p 
+                                    style={{
+                                        width: '230px', 
+                                        marginTop: '12px', 
+                                        whiteSpace: 'pre-wrap',
+                                        wordBreak: 'break-all'}}>
+                                    {Name?Name:imageName}
                                 </p>
                             <Icon
                                 type='delete'
