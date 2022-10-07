@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Button, Icon} from 'antd'
+import {Icon} from 'antd'
 import Axios from 'axios'
 
 function Like(props) {
