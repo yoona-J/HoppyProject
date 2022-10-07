@@ -7,6 +7,7 @@ import moment from 'moment'
 import { Avatar, Button, Icon, Drawer, Modal } from 'antd'
 import {getUser} from '../../../_actions/user_actions'
 import './DetailStoryPage.css'
+import Like from './Section/Like'
 
 function DetailStoryPage(props) {
 
@@ -167,7 +168,6 @@ function DetailStoryPage(props) {
                   <div style={{ textAlign: 'center' }}>
                     <br />
                     <p>게시글을 삭제하시겠습니까?</p>
-                    {/* <p style={{fontSize: '9px'}}>계정 탈퇴 시 모든 개인 정보가 삭제됩니다</p> */}
                   </div>
             </Modal>
             </Drawer>
@@ -224,7 +224,7 @@ function DetailStoryPage(props) {
                     fontSize: '21px',
                     marginLeft: 'auto'
                 }}>
-                    <Icon type='heart' />
+                <Like StoryDetail={StoryDetail}/>
                 </div>
             </div>
             <hr style={{width: '100%', backgroundColor: '#A5A5A5', border: 0, height: '1px'}} />
