@@ -1,6 +1,8 @@
 import React from 'react'
 
-function LikeMeetingList() {
+function LikeMeetingList(props) {
+
+  console.log('likeProps >>', props)
   return (
     <div>LikeMeetingList</div>
   )

@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import './MyPage.css'
 import { getUser } from '../../../_actions/user_actions';
+import MyMeetingList from './MyMeetingList/MyMeetingList';
+import LikeMeetingList from './LikeMeetingList/LikeMeetingList';
 
 const {TabPane} = Tabs;
 
@@ -128,10 +130,10 @@ function MyPage() {
                             primaryColor: '#D3BA9C'
                         }}>
                         <TabPane tab="나의 모임" key="1">
-                            나의 모임
+                            <MyMeetingList UserInfo={UserInfo} />
                         </TabPane>
                         <TabPane tab="관심 모임" key="2">
-                            관심 모임
+                            <LikeMeetingList UserInfo={UserInfo} />
                         </TabPane>
                     </Tabs>
                 </div>
